@@ -1,0 +1,90 @@
+{
+    "common": {
+        "name": "bitaxe",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "uk": "Початкова версія",
+                "zh-cn": "首次出版"
+            }
+        },
+        "titleLang": {
+            "en": "BitaxeOS Mining",
+            "de": "BitaxeOS-Mining",
+            "ru": "BitaxeOS Майнинг",
+            "pt": "Mineração BitaxeOS",
+            "nl": "BitaxeOS-mijnbouw",
+            "fr": "Exploitation minière BitaxeOS",
+            "it": "Estrazione BitaxeOS",
+            "es": "Minería BitaxeOS",
+            "pl": "Wydobywanie BitaxeOS",
+            "uk": "Майнінг BitaxeOS",
+            "zh-cn": "BitaxeOS挖矿"
+        },
+        "desc": {
+            "en": "Integrate BitaxeOX Miner in ioBroker",
+            "de": "Integrieren Sie BitaxeOX Miner in ioBroker",
+            "ru": "Интегрируйте BitaxeOX Miner в ioBroker",
+            "pt": "Integre o BitaxeOX Miner no ioBroker",
+            "nl": "Integreer BitaxeOX Miner in ioBroker",
+            "fr": "Intégrer BitaxeOX Miner dans ioBroker",
+            "it": "Integra BitaxeOX Miner in ioBroker",
+            "es": "Integre BitaxeOX Miner en ioBroker",
+            "pl": "Zintegruj BitaxeOX Miner z ioBrokerem",
+            "uk": "Інтегруйте BitaxeOX Miner в ioBroker",
+            "zh-cn": "将 BitaxeOX 矿机集成到 ioBroker 中"
+        },
+        "authors": [
+            "Hans-Wurst-21 <github+bitaxe@hansmail.net>"
+        ],
+        "keywords": [
+            "bitcoin",
+            "bitaxe",
+            "mining"
+        ],
+        "licenseInformation": {
+            "type": "free",
+            "license": "MIT"
+        },
+        "platform": "Javascript/Node.js",
+        "icon": "bitaxe.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/Hans-Wurst-21/ioBroker.bitaxe/main/admin/bitaxe.png",
+        "readme": "https://github.com/Hans-Wurst-21/ioBroker.bitaxe/blob/main/README.md",
+        "loglevel": "info",
+        "tier": 3,
+        "mode": "daemon",
+        "type": "infrastructure",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "push",
+        "adminUI": {
+            "config": "json"
+        },
+        "dependencies": [
+            {
+                "js-controller": ">=6.0.11"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": "7.0.23"
+            }
+        ]
+    },
+    "native": {
+        "option1": true,
+        "option2": "42"
+    },
+    "objects": [],
+    "instanceObjects": []
+}
