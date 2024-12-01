@@ -1,18 +1,18 @@
 const utils = require('@iobroker/adapter-core');
 const WebSocket = require('ws');
 
-class MyAdapter extends utils.Adapter {
+class Bitaxe extends utils.Adapter {
     constructor(options) {
         super({
             ...options,
-            name: 'myadapter',
+            name: 'bitaxe',
         });
         this.on('ready', this.onReady.bind(this));
         this.on('unload', this.onUnload.bind(this));
     }
 
     async onReady() {
-        this.log.info('MyAdapter is ready');
+        this.log.info('Bitaxe is ready');
 
         // Websocket-URL für Testzwecke
         const websocketUrl = 'wss://echo.websocket.org';
@@ -57,8 +57,8 @@ class MyAdapter extends utils.Adapter {
 
 if (require.main !== module) {
     // Export the constructor in compact mode
-    module.exports = options => new MyAdapter(options);
+    module.exports = options => new Bitaxe(options);
 } else {
     // otherwise start the instance directly
-    new MyAdapter();
+    new Bitaxe();
 }
