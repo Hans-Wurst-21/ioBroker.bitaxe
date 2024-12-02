@@ -82,9 +82,576 @@
         ]
     },
     "native": {
-        "option1": true,
-        "option2": "42"
+        "apiUrl": "192.168.178.26/api/system/info",
+        "updateInterval": 60000
     },
     "objects": [],
-    "instanceObjects": []
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "power",
+            "type": "channel",
+            "common": {
+                "name": "Power Data"
+            },
+            "native": {}
+        },
+        {
+            "_id": "power.power",
+            "type": "state",
+            "common": {
+                "name": "Power",
+                "type": "number",
+                "role": "value.power",
+                "read": true,
+                "write": false,
+                "unit": "W"
+            },
+            "native": {}
+        },
+        {
+            "_id": "power.voltage",
+            "type": "state",
+            "common": {
+                "name": "Voltage",
+                "type": "number",
+                "role": "value.voltage",
+                "read": true,
+                "write": false,
+                "unit": "mV"
+            },
+            "native": {}
+        },
+        {
+            "_id": "power.current",
+            "type": "state",
+            "common": {
+                "name": "Current",
+                "type": "number",
+                "role": "value.current",
+                "read": true,
+                "write": false,
+                "unit": "mA"
+            },
+            "native": {}
+        },
+        {
+            "_id": "temperature",
+            "type": "channel",
+            "common": {
+                "name": "Temperature Data"
+            },
+            "native": {}
+        },
+        {
+            "_id": "temperature.temp",
+            "type": "state",
+            "common": {
+                "name": "Temperature",
+                "type": "number",
+                "role": "value.temperature",
+                "read": true,
+                "write": false,
+                "unit": "°C"
+            },
+            "native": {}
+        },
+        {
+            "_id": "temperature.vrTemp",
+            "type": "state",
+            "common": {
+                "name": "VR Temperature",
+                "type": "number",
+                "role": "value.temperature",
+                "read": true,
+                "write": false,
+                "unit": "°C"
+            },
+            "native": {}
+        },
+        {
+            "_id": "mining",
+            "type": "channel",
+            "common": {
+                "name": "Mining Data"
+            },
+            "native": {}
+        },
+        {
+            "_id": "mining.hashRate",
+            "type": "state",
+            "common": {
+                "name": "Hash Rate",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false,
+                "unit": "H/s"
+            },
+            "native": {}
+        },
+        {
+            "_id": "mining.bestDiff",
+            "type": "state",
+            "common": {
+                "name": "Best Difficulty",
+                "type": "string",
+                "role": "value",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "mining.bestSessionDiff",
+            "type": "state",
+            "common": {
+                "name": "Best Session Difficulty",
+                "type": "string",
+                "role": "value",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "mining.isUsingFallbackStratum",
+            "type": "state",
+            "common": {
+                "name": "Using Fallback Stratum",
+                "type": "boolean",
+                "role": "indicator",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "mining.sharesAccepted",
+            "type": "state",
+            "common": {
+                "name": "Shares Accepted",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "mining.sharesRejected",
+            "type": "state",
+            "common": {
+                "name": "Shares Rejected",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "hardware",
+            "type": "channel",
+            "common": {
+                "name": "Hardware Data"
+            },
+            "native": {}
+        },
+        {
+            "_id": "hardware.freeHeap",
+            "type": "state",
+            "common": {
+                "name": "Free Heap",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false,
+                "unit": "bytes"
+            },
+            "native": {}
+        },
+        {
+            "_id": "hardware.coreVoltage",
+            "type": "state",
+            "common": {
+                "name": "Core Voltage",
+                "type": "number",
+                "role": "value.voltage",
+                "read": true,
+                "write": false,
+                "unit": "mV"
+            },
+            "native": {}
+        },
+        {
+            "_id": "hardware.coreVoltageActual",
+            "type": "state",
+            "common": {
+                "name": "Actual Core Voltage",
+                "type": "number",
+                "role": "value.voltage",
+                "read": true,
+                "write": false,
+                "unit": "mV"
+            },
+            "native": {}
+        },
+        {
+            "_id": "hardware.frequency",
+            "type": "state",
+            "common": {
+                "name": "Frequency",
+                "type": "number",
+                "role": "value.frequency",
+                "read": true,
+                "write": false,
+                "unit": "MHz"
+            },
+            "native": {}
+        },
+        {
+            "_id": "hardware.asicCount",
+            "type": "state",
+            "common": {
+                "name": "ASIC Count",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "hardware.smallCoreCount",
+            "type": "state",
+            "common": {
+                "name": "Small Core Count",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "hardware.ASICModel",
+            "type": "state",
+            "common": {
+                "name": "ASIC Model",
+                "type": "string",
+                "role": "info.hardware",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "configuration",
+            "type": "channel",
+            "common": {
+              "name": "Configuration"
+            },
+            "native": {}
+          },
+          {
+            "_id": "configuration.fanrpm",
+            "type": "state",
+            "common": {
+              "name": "Fan RPM",
+              "type": "number",
+              "role": "value",
+              "read": true,
+              "write": false,
+              "unit": "RPM"
+            },
+            "native": {}
+          },
+          {
+            "_id": "configuration.fanspeed",
+            "type": "state",
+            "common": {
+              "name": "Fan Speed",
+              "type": "number",
+              "role": "value",
+              "read": true,
+              "write": false,
+              "unit": "%"
+            },
+            "native": {}
+          },
+          {
+            "_id": "configuration.autofanspeed",
+            "type": "state",
+            "common": {
+              "name": "Auto Fan Speed",
+              "type": "boolean",
+              "role": "switch",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "configuration.invertfanpolarity",
+            "type": "state",
+            "common": {
+              "name": "Invert Fan Polarity",
+              "type": "boolean",
+              "role": "switch",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "configuration.invertscreen",
+            "type": "state",
+            "common": {
+              "name": "Invert Screen",
+              "type": "boolean",
+              "role": "switch",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "configuration.overheat_mode",
+            "type": "state",
+            "common": {
+              "name": "Overheat Mode",
+              "type": "boolean",
+              "role": "switch",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "configuration.flipscreen",
+            "type": "state",
+            "common": {
+              "name": "Flip Screen",
+              "type": "boolean",
+              "role": "switch",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "system",
+            "type": "channel",
+            "common": {
+              "name": "System"
+            },
+            "native": {}
+          },
+          {
+            "_id": "system.runningPartition",
+            "type": "state",
+            "common": {
+              "name": "Running Partition",
+              "type": "string",
+              "role": "text",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "system.boardVersion",
+            "type": "state",
+            "common": {
+              "name": "Board Version",
+              "type": "string",
+              "role": "text",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "system.version",
+            "type": "state",
+            "common": {
+              "name": "Version",
+              "type": "string",
+              "role": "text",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "system.uptimeSeconds",
+            "type": "state",
+            "common": {
+              "name": "Uptime",
+              "type": "number",
+              "role": "value.time",
+              "read": true,
+              "write": false,
+              "unit": "s"
+            },
+            "native": {}
+          },
+          {
+            "_id": "stratum",
+            "type": "channel",
+            "common": {
+              "name": "Stratum"
+            },
+            "native": {}
+          },
+          {
+            "_id": "stratum.fallbackStratumUser",
+            "type": "state",
+            "common": {
+              "name": "Fallback Stratum User",
+              "type": "string",
+              "role": "text",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "stratum.stratumUser",
+            "type": "state",
+            "common": {
+              "name": "Stratum User",
+              "type": "string",
+              "role": "text",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "stratum.fallbackStratumPort",
+            "type": "state",
+            "common": {
+              "name": "Fallback Stratum Port",
+              "type": "number",
+              "role": "value",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "stratum.stratumPort",
+            "type": "state",
+            "common": {
+              "name": "Stratum Port",
+              "type": "number",
+              "role": "value",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "stratum.fallbackStratumURL",
+            "type": "state",
+            "common": {
+              "name": "Fallback Stratum URL",
+              "type": "string",
+              "role": "url",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "stratum.stratumURL",
+            "type": "state",
+            "common": {
+              "name": "Stratum URL",
+              "type": "string",
+              "role": "url",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "network",
+            "type": "channel",
+            "common": {
+              "name": "Network"
+            },
+            "native": {}
+          },
+          {
+            "_id": "network.wifiStatus",
+            "type": "state",
+            "common": {
+              "name": "WiFi Status",
+              "type": "string",
+              "role": "text",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "network.hostname",
+            "type": "state",
+            "common": {
+              "name": "Hostname",
+              "type": "string",
+              "role": "text",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "network.macAddr",
+            "type": "state",
+            "common": {
+              "name": "MAC Address",
+              "type": "string",
+              "role": "info.mac",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          },
+          {
+            "_id": "network.ssid",
+            "type": "state",
+            "common": {
+              "name": "SSID",
+              "type": "string",
+              "role": "text",
+              "read": true,
+              "write": false
+            },
+            "native": {}
+          }
+    ]
 }
