@@ -239,7 +239,7 @@
             "type": "state",
             "common": {
                 "name": "Using Fallback Stratum",
-                "type": "boolean",
+                "type": "number",
                 "role": "indicator",
                 "read": true,
                 "write": false
@@ -405,7 +405,7 @@
             "type": "state",
             "common": {
               "name": "Auto Fan Speed",
-              "type": "boolean",
+              "type": "number",
               "role": "switch",
               "read": true,
               "write": false
@@ -417,7 +417,7 @@
             "type": "state",
             "common": {
               "name": "Invert Fan Polarity",
-              "type": "boolean",
+              "type": "number",
               "role": "switch",
               "read": true,
               "write": false
@@ -429,7 +429,7 @@
             "type": "state",
             "common": {
               "name": "Invert Screen",
-              "type": "boolean",
+              "type": "number",
               "role": "switch",
               "read": true,
               "write": false
@@ -441,7 +441,7 @@
             "type": "state",
             "common": {
               "name": "Overheat Mode",
-              "type": "boolean",
+              "type": "number",
               "role": "switch",
               "read": true,
               "write": false
@@ -453,7 +453,7 @@
             "type": "state",
             "common": {
               "name": "Flip Screen",
-              "type": "boolean",
+              "type": "number",
               "role": "switch",
               "read": true,
               "write": false

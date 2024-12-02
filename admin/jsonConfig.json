@@ -4,13 +4,23 @@
     "items": {
         "apiUrl": {
             "type": "text",
-            "label": "API URL",
-            "default": "http://192.168.178.26/api/system/info"
+            "label": "API URL - default: 'http://BITAXE_IP/api/system/info'",
+            "default": "http://BITAXE_IP/api/system/info",
+            "xs": 12,
+            "sm": 12,
+            "md": 4,
+            "lg": 4,
+            "xl": 4
         },
         "updateInterval": {
             "type": "number",
-            "label": "Update Interval (ms)",
-            "default": 60000
+            "label": "Update Interval (ms) - default: 5000ms = 5 seconds",
+            "default": 5000,
+            "xs": 12,
+            "sm": 12,
+            "md": 4,
+            "lg": 4,
+            "xl": 4
         }
     }
 }

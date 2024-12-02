@@ -16,7 +16,7 @@ class Bitaxe extends utils.Adapter {
     async onReady() {
         this.log.info('Bitaxe adapter is starting');
 
-        this.apiUrl = this.config.apiUrl || 'http://192.168.178.26/api/system/info';
+        this.apiUrl = this.config.apiUrl;
         this.updateInterval = this.config.updateInterval || 60000;
 
         this.fetchDataInterval = setInterval(() => {
