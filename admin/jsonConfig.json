@@ -4,8 +4,8 @@
     "items": {
         "apiUrl": {
             "type": "text",
-            "label": "API URL - default: 'http://BITAXE_IP/api/system/info'",
-            "default": "http://BITAXE_IP/api/system/info",
+            "label": "API URL - default: 'http://BITAXE_IP' not / at the end",
+            "default": "http://BITAXE_IP",
             "xs": 12,
             "sm": 12,
             "md": 4,

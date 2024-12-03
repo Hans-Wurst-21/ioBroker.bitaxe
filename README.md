@@ -10,13 +10,80 @@
 
 **Tests:** ![Test and Release](https://github.com/Hans-Wurst-21/ioBroker.bitaxe/workflows/Test%20and%20Release/badge.svg)
 
-## bitaxe adapter for ioBroker
+# BitaxeOS Mining Adapter for ioBroker
 
-Integrate BitaxeOX Miner in ioBroker
+The Bitaxe adapter integrates the BitaxeOX Miner into ioBroker, allowing users to monitor and manage their mining operations efficiently.
 
-## Description under construction
+It should work with all Bitaxes. However, I cannot promise it! 
 
-soon
+#### Tested only on a Bitaxe 601 Gamma with AxoOS v2.4.0!
+
+## Features
+
+- **Real-time Data**: Fetches and displays real-time data from the BitaxeOX Miner.
+- **Configuration Management**: Allows users to update miner settings directly from ioBroker.
+- **Comprehensive Monitoring**: Monitors power consumption, temperature, and mining performance metrics.
+
+## Installation
+
+1. Install the adapter via the ioBroker admin interface.
+2. Configure the adapter settings, including the API URL and update interval.
+
+## Configuration
+
+The adapter can be configured with the following options:
+
+- **API URL**: The endpoint for accessing the miner's API (e.g., `http://BITAXE_API`). (not / at the end)
+
+- **Update Interval**: The frequency of data updates in milliseconds (default is 60000 ms).
+
+## States
+
+The adapter creates various channels and states to represent different metrics from the miner:
+
+### Information Channel
+- `info.connection`: Indicates whether the device or service is connected (boolean).
+
+### Power Data Channel
+- `power.power`: Current power consumption (W).
+- `power.voltage`: Voltage level (mV).
+- `power.current`: Current draw (mA).
+
+### Temperature Data Channel
+- `temperature.temp`: Device temperature (°C).
+- `temperature.vrTemp`: VR temperature (°C).
+
+### Mining Data Channel
+- `mining.hashRate`: Current hash rate (H/s).
+- `mining.bestDiff`: Best difficulty encountered.
+- `mining.sharesAccepted`: Number of accepted shares.
+- `mining.sharesRejected`: Number of rejected shares.
+
+### Hardware Data Channel
+- `hardware.freeHeap`: Free memory available (bytes).
+- `hardware.frequency`: Operating frequency (MHz).
+- `hardware.asicCount`: Number of ASICs in use.
+
+### Configuration Channel
+- `configuration.fanrpm`: Fan RPM.
+- `configuration.fanspeed`: Fan speed (%).
+
+### System Channel
+- `system.version`: Version of the system software.
+- `system.uptimeSeconds`: Uptime of the system in seconds.
+
+### Stratum Channel
+- `stratum.stratumURL`: URL of the stratum server.
+- `stratum.stratumPort`: Port used for stratum connections.
+
+### Network Channel
+- `network.wifiStatus`: Status of the WiFi connection.
+- `network.hostname`: Hostname of the device.
+- `network.macAddr`: MAC address of the device.
+
+## Logging
+
+The adapter logs important events and errors to help with troubleshooting. Set log level to "info" for standard operation or "debug" for detailed logging.
 
 ## Changelog
 <!--

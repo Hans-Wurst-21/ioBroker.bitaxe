@@ -11,13 +11,16 @@ class Bitaxe extends utils.Adapter {
         });
         this.on('ready', this.onReady.bind(this));
         this.on('unload', this.onUnload.bind(this));
+        this.on('stateChange', this.onStateChange.bind(this));
     }
 
     async onReady() {
         this.log.info('Bitaxe adapter is starting');
 
+        await this.subscribeStatesAsync('*');
+
         this.apiUrl = this.config.apiUrl;
-        this.updateInterval = this.config.updateInterval || 60000;
+        this.updateInterval = this.config.updateInterval;
 
         this.fetchDataInterval = setInterval(() => {
             this.fetchApiData();
@@ -29,10 +32,10 @@ class Bitaxe extends utils.Adapter {
     async fetchApiData() {
         try {
             if (typeof this.apiUrl !== 'string') {
-                throw new Error('API URL ist nicht definiert');
+                throw new Error('API URL is not defined');
             }
-            const response = await axios.get(this.apiUrl);
-            this.log.debug(`Raw data from API: ${JSON.stringify(response.data)}`);
+            const response = await axios.get(`${this.apiUrl}/api/system/info`);
+            // this.log.debug(`Raw data from API: ${JSON.stringify(response.data)}`);
             await this.setStateAsync('info.connection', { val: true, ack: true });
             await this.processApiData(response.data);
         } catch (error) {
@@ -47,6 +50,34 @@ class Bitaxe extends utils.Adapter {
             if (stateId) {
                 await this.setStateAsync(stateId, { val: value, ack: true });
             }
+        }
+    }
+
+    async onStateChange(id, state) {
+        if (state && !state.ack) {
+            const idParts = id.split('.');
+            const stateName = idParts[idParts.length - 1];
+
+            if (stateName === 'frequency') {
+                await this.updateFrequency(state.val);
+            }
+        }
+    }
+
+    async updateFrequency(Frequency) {
+        try {
+            if (typeof this.apiUrl !== 'string') {
+                throw new Error('API URL ist nicht definiert');
+            }
+            await axios.patch(
+                `${this.apiUrl}/api/system`,
+                { frequency: Frequency },
+                { headers: { 'Content-Type': 'application/json' } },
+            );
+            // this.log.debug(`Frequency updated to ${Frequency}`);
+            await this.setStateAsync('hardware.frequency', { val: Frequency, ack: true });
+        } catch (error) {
+            this.log.error(`Error updating frequency: ${error.message}`);
         }
     }
 
@@ -103,7 +134,7 @@ class Bitaxe extends utils.Adapter {
             this.log.info('Cleaned up everything...');
             callback();
         } catch (e) {
-            this.log.error(`Fehler beim Beenden des Adapters: ${e.message}`);
+            this.log.error(`Error when exiting the adapter: ${e.message}`);
             callback();
         }
     }
