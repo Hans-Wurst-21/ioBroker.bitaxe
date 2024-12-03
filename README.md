@@ -12,17 +12,26 @@
 
 # BitaxeOS Mining Adapter for ioBroker
 
-The Bitaxe adapter integrates the BitaxeOX Miner into ioBroker, allowing users to monitor and manage their mining operations efficiently.
+The Bitaxe adapter integrates the Bitaxe Miner into ioBroker, allowing users to monitor and manage their mining operations efficiently. Adjust the frequency of the ASIC during operation.
 
 It should work with all Bitaxes. However, I cannot promise it! 
 
 #### Tested only on a Bitaxe 601 Gamma with AxoOS v2.4.0!
 
+##
+
+**Important: The adapter or Bitaxe will never ask for your seed!**
+
+**⚠️ NEVER ⚠️**
+
+**If you share your seed you will lose 100% of everything!**
+
 ## Features
 
-- **Real-time Data**: Fetches and displays real-time data from the BitaxeOX Miner.
-- **Configuration Management**: Allows users to update miner settings directly from ioBroker.
+- **Real-time Data**: Fetches and displays real-time data from the Bitaxe Miner.
+- **Configuration Management**: Change the frequency of the ASIC during operation.
 - **Comprehensive Monitoring**: Monitors power consumption, temperature, and mining performance metrics.
+- **Reset Bitaxe**: Reset your Bitaxe (Button/boolean) - be careful
 
 ## Installation
 
@@ -61,7 +70,7 @@ The adapter creates various channels and states to represent different metrics f
 
 ### Hardware Data Channel
 - `hardware.freeHeap`: Free memory available (bytes).
-- `hardware.frequency`: Operating frequency (MHz).
+- `hardware.frequency`: Operating frequency (MHz). Can be changed while the system is running.
 - `hardware.asicCount`: Number of ASICs in use.
 
 ### Configuration Channel
@@ -71,6 +80,9 @@ The adapter creates various channels and states to represent different metrics f
 ### System Channel
 - `system.version`: Version of the system software.
 - `system.uptimeSeconds`: Uptime of the system in seconds.
+
+### System-RESET Channel
+- `system-RESET.RESET_Bitaxe`: Reset your Bitaxe 
 
 ### Stratum Channel
 - `stratum.stratumURL`: URL of the stratum server.

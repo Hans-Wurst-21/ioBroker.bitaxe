@@ -60,6 +60,8 @@ class Bitaxe extends utils.Adapter {
 
             if (stateName === 'frequency') {
                 await this.updateFrequency(state.val);
+            } else if (stateName === 'RESET_Bitaxe') {
+                await this.resetBitaxe();
             }
         }
     }
@@ -67,7 +69,7 @@ class Bitaxe extends utils.Adapter {
     async updateFrequency(Frequency) {
         try {
             if (typeof this.apiUrl !== 'string') {
-                throw new Error('API URL ist nicht definiert');
+                throw new Error('API URL is not defined');
             }
             await axios.patch(
                 `${this.apiUrl}/api/system`,
@@ -78,6 +80,18 @@ class Bitaxe extends utils.Adapter {
             await this.setStateAsync('hardware.frequency', { val: Frequency, ack: true });
         } catch (error) {
             this.log.error(`Error updating frequency: ${error.message}`);
+        }
+    }
+
+    async resetBitaxe() {
+        try {
+            if (typeof this.apiUrl !== 'string') {
+                throw new Error('API URL is not defined');
+            }
+            await axios.post(`${this.apiUrl}/api/system/restart`);
+            this.log.info('Bitaxe has been reset');
+        } catch (error) {
+            this.log.error(`Error resetting Bitaxe: ${error.message}`);
         }
     }
 

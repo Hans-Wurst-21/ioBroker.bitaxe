@@ -518,6 +518,26 @@
             "native": {}
           },
           {
+            "_id": "system-RESET",
+            "type": "channel",
+            "common": {
+              "name": "system-RESET"
+            },
+            "native": {}
+          },
+          {
+            "_id": "system-RESET.RESET_Bitaxe",
+            "type": "state",
+            "common": {
+              "name": "Reset Bitaxe",
+              "type": "boolean",
+              "role": "button",
+              "read": false,
+              "write": true
+            },
+            "native": {}
+          },
+          {
             "_id": "stratum",
             "type": "channel",
             "common": {
