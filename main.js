@@ -62,7 +62,26 @@ class Bitaxe extends utils.Adapter {
                 await this.updateFrequency(state.val);
             } else if (stateName === 'RESET_Bitaxe') {
                 await this.resetBitaxe();
+            } else if (stateName === 'coreVoltage') {
+                await this.updatecoreVoltage(state.val);
             }
+        }
+    }
+
+    async updatecoreVoltage(CoreVoltage) {
+        try {
+            if (typeof this.apiUrl !== 'string') {
+                throw new Error('API URL is not defined');
+            }
+            await axios.patch(
+                `${this.apiUrl}/api/system`,
+                { coreVoltage: CoreVoltage },
+                { headers: { 'Content-Type': 'application/json' } },
+            );
+            this.log.debug(`Core Voltage updated to ${CoreVoltage}mV`);
+            await this.setStateAsync('hardware.coreVoltage', { val: CoreVoltage, ack: true });
+        } catch (error) {
+            this.log.error(`Error updating Core Voltage: ${error.message}`);
         }
     }
 

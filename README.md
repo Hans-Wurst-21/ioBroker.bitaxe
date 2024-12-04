@@ -29,7 +29,7 @@ It should work with all Bitaxes. However, I cannot promise it!
 ## Features
 
 - **Real-time Data**: Fetches and displays real-time data from the Bitaxe Miner.
-- **Configuration Management**: Change the frequency of the ASIC during operation.
+- **Configuration Management**: Change the frequency and Core-Voltage of the ASIC during operation.
 - **Comprehensive Monitoring**: Monitors power consumption, temperature, and mining performance metrics.
 - **Reset Bitaxe**: Reset your Bitaxe (Button/boolean) - be careful
 
@@ -65,33 +65,48 @@ The adapter creates various channels and states to represent different metrics f
 ### Mining Data Channel
 - `mining.hashRate`: Current hash rate (H/s).
 - `mining.bestDiff`: Best difficulty encountered.
+- `mining.bestSessionDiff`: Best session difficulty.
+- `mining.isUsingFallbackStratum`: Indicates if using fallback stratum.
 - `mining.sharesAccepted`: Number of accepted shares.
 - `mining.sharesRejected`: Number of rejected shares.
 
 ### Hardware Data Channel
-- `hardware.freeHeap`: Free memory available (bytes).
 - `hardware.frequency`: Operating frequency (MHz). Can be changed while the system is running.
+- `hardware.coreVoltage`: Core voltage (mV). Can be changed while the system is running.
+- `hardware.freeHeap`: Free memory available (bytes).
+- `hardware.coreVoltageActual`: Actual core voltage (mV).
 - `hardware.asicCount`: Number of ASICs in use.
+- `hardware.smallCoreCount`: Number of small cores.
+- `hardware.ASICModel`: ASIC model information.
 
 ### Configuration Channel
 - `configuration.fanrpm`: Fan RPM.
 - `configuration.fanspeed`: Fan speed (%).
+- `configuration.autofanspeed`: Auto fan speed setting.
+- `configuration.invertfanpolarity`: Fan polarity inversion setting.
+- `configuration.invertscreen`: Screen inversion setting.
+- `configuration.overheat_mode`: Overheat mode setting.
+- `configuration.flipscreen`: Screen flip setting.
 
 ### System Channel
 - `system.version`: Version of the system software.
+- `system.boardVersion`: Version of the board.
+- `system.runningPartition`: Currently running partition.
 - `system.uptimeSeconds`: Uptime of the system in seconds.
-
-### System-RESET Channel
-- `system-RESET.RESET_Bitaxe`: Reset your Bitaxe 
 
 ### Stratum Channel
 - `stratum.stratumURL`: URL of the stratum server.
+- `stratum.fallbackStratumURL`: Fallback stratum server URL.
 - `stratum.stratumPort`: Port used for stratum connections.
+- `stratum.fallbackStratumPort`: Fallback stratum port.
+- `stratum.stratumUser`: Stratum user.
+- `stratum.fallbackStratumUser`: Fallback stratum user.
 
 ### Network Channel
 - `network.wifiStatus`: Status of the WiFi connection.
 - `network.hostname`: Hostname of the device.
 - `network.macAddr`: MAC address of the device.
+- `network.ssid`: SSID of the connected WiFi network.
 
 ## Logging
 

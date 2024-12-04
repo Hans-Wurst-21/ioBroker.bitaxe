@@ -299,7 +299,7 @@
                 "type": "number",
                 "role": "value.voltage",
                 "read": true,
-                "write": false,
+                "write": true,
                 "unit": "mV"
             },
             "native": {}
