@@ -12,7 +12,7 @@
 
 # BitaxeOS Mining Adapter for ioBroker
 
-The Bitaxe adapter integrates the Bitaxe Miner into ioBroker, allowing users to monitor and manage their mining operations efficiently. Adjust the frequency of the ASIC during operation.
+The Bitaxe adapter integrates the Bitaxe Miner into ioBroker, allowing users to monitor and manage their mining operations efficiently. Adjust the frequency and Core-Voltage of the ASIC during operation.
 
 It should work with all Bitaxes. However, I cannot promise it! 
 
@@ -117,7 +117,14 @@ The adapter logs important events and errors to help with troubleshooting. Set l
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+* (Hans-Wurst-21) ???
+
 ### 0.0.2 (2024-12-04)
+* (Hans-Wurst-21) publish npmjs.com
+
+### 0.0.1 (2024-12-01)
 * (Hans-Wurst-21) initial release
 
 ## License
