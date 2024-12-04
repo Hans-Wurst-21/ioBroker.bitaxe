@@ -117,8 +117,7 @@ The adapter logs important events and errors to help with troubleshooting. Set l
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 0.0.2 (2024-12-04)
 * (Hans-Wurst-21) initial release
 
 ## License
