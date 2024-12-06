@@ -82,7 +82,7 @@
     ]
   },
   "native": {
-    "apiUrl": "192.168.178.26/api/system/info",
+    "apiUrl": "http://BITAXE_IP",
     "updateInterval": 60000
   },
   "objects": [],

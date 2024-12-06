@@ -16,7 +16,7 @@ The Bitaxe adapter integrates the Bitaxe Miner into ioBroker, allowing users to 
 
 It should work with all Bitaxes. However, I cannot promise it! 
 
-#### Tested only on a Bitaxe 601 Gamma with AxoOS v2.4.0!
+#### Tested only on Bitaxe 601 Gamma with AxeOS v2.4.0!
 
 ##
 
