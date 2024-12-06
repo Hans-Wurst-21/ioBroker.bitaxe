@@ -124,7 +124,7 @@ The adapter logs important events and errors to help with troubleshooting. Set l
 ### 0.0.2 (2024-12-04)
 * (Hans-Wurst-21) publish npmjs.com
 
-### 0.0.1 (2024-12-01)
+### 2024-12-01
 * (Hans-Wurst-21) initial release
 
 ## License
