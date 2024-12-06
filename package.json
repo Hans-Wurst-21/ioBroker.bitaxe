@@ -9,6 +9,7 @@
   "homepage": "https://github.com/Hans-Wurst-21/ioBroker.bitaxe",
   "license": "MIT",
   "keywords": [
+    "ioBroker",
     "bitcoin",
     "bitaxe",
     "mining"
