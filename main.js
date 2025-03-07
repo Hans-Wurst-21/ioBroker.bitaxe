@@ -2,6 +2,7 @@
 
 const utils = require('@iobroker/adapter-core');
 const axios = require('axios');
+// axios.defaults.timeout = 5000;
 
 class Bitaxe extends utils.Adapter {
     constructor(options) {
@@ -22,7 +23,7 @@ class Bitaxe extends utils.Adapter {
         this.apiUrl = this.config.apiUrl;
         this.updateInterval = this.config.updateInterval;
 
-        this.fetchDataInterval = setInterval(() => {
+        this.fetchDataInterval = this.setInterval(() => {
             this.fetchApiData();
         }, this.updateInterval);
 
@@ -162,7 +163,7 @@ class Bitaxe extends utils.Adapter {
     onUnload(callback) {
         try {
             if (this.fetchDataInterval) {
-                clearInterval(this.fetchDataInterval);
+                this.clearInterval(this.fetchDataInterval);
             }
             this.log.info('Cleaned up everything...');
             callback();

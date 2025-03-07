@@ -91,7 +91,19 @@
       "_id": "info",
       "type": "channel",
       "common": {
-        "name": "Information"
+        "name": {
+          "en": "Information",
+          "de": "Informationen",
+          "ru": "Информация",
+          "pt": "Informação",
+          "nl": "Informatie",
+          "fr": "Informations",
+          "it": "Informazioni",
+          "es": "Información",
+          "pl": "Informacje",
+          "uk": "Інформація",
+          "zh-cn": "资料"
+        }
       },
       "native": {}
     },
@@ -100,7 +112,19 @@
       "type": "state",
       "common": {
         "role": "indicator.connected",
-        "name": "Device or service connected",
+        "name": {
+          "en": "Device or service connected",
+          "de": "Geräte- oder Serviceanschluss",
+          "ru": "Устройство или служба подключены",
+          "pt": "Dispositivo ou serviço conectado",
+          "nl": "Apparaat of dienst verbonden",
+          "fr": "Appareil ou service connecté",
+          "it": "Dispositivo o servizio collegato",
+          "es": "Dispositivo o servicio conectado",
+          "pl": "Przyłączone urządzenie lub usługa",
+          "uk": "Пристрої або послуги підключені",
+          "zh-cn": "设备或服务已连接"
+        },
         "type": "boolean",
         "read": true,
         "write": false,
@@ -112,7 +136,19 @@
       "_id": "power",
       "type": "channel",
       "common": {
-        "name": "Power Data"
+        "name": {
+          "en": "Power Data",
+          "de": "Leistungsdaten",
+          "ru": "Данные мощности",
+          "pt": "Dados de alimentação",
+          "nl": "Energiegegevens",
+          "fr": "Données de puissance",
+          "it": "Dati di potenza",
+          "es": "Datos de potencia",
+          "pl": "Dane dotyczące mocy",
+          "uk": "Дані живлення",
+          "zh-cn": "电源数据"
+        }
       },
       "native": {}
     },
@@ -120,7 +156,19 @@
       "_id": "power.power",
       "type": "state",
       "common": {
-        "name": "Power",
+        "name": {
+          "en": "Power",
+          "de": "Power",
+          "ru": "Мощность",
+          "pt": "Poder",
+          "nl": "Vermogen",
+          "fr": "Puissance",
+          "it": "Potenza",
+          "es": "Poder",
+          "pl": "Moc",
+          "uk": "Потужність",
+          "zh-cn": "权力"
+        },
         "type": "number",
         "role": "value.power",
         "read": true,
@@ -133,7 +181,19 @@
       "_id": "power.voltage",
       "type": "state",
       "common": {
-        "name": "Voltage",
+        "name": {
+          "en": "Voltage",
+          "de": "Spannung",
+          "ru": "Воль",
+          "pt": "Tensão",
+          "nl": "Spanning",
+          "fr": "Tension",
+          "it": "Tensione",
+          "es": "Voltaje",
+          "pl": "Napięcie",
+          "uk": "Навігація",
+          "zh-cn": "电压"
+        },
         "type": "number",
         "role": "value.voltage",
         "read": true,
@@ -146,7 +206,19 @@
       "_id": "power.current",
       "type": "state",
       "common": {
-        "name": "Current",
+        "name": {
+          "en": "Current",
+          "de": "Strom",
+          "ru": "Текущие",
+          "pt": "Corrente",
+          "nl": "Lopend",
+          "fr": "Actuellement",
+          "it": "Corrente",
+          "es": "Corriente",
+          "pl": "Bieżący",
+          "uk": "Поточний час",
+          "zh-cn": "当前"
+        },
         "type": "number",
         "role": "value.current",
         "read": true,
